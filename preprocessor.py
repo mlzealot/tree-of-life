@@ -13,6 +13,5 @@ if __name__ == "__main__":
                 inplace=True)
     data.reset_index(inplace=True)
     data.drop("index", axis=1, inplace=True)
-    data["root"] = "Root"
     # data.replace(np.nan, None, inplace=True)
     data.to_csv(dest_file_path)

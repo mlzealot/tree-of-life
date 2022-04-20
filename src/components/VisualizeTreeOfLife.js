@@ -1,6 +1,7 @@
 import React from 'react';
 import * as d3 from 'd3';
-import data from '../data/KidneyRegular.csv';
+import kidneyData from '../data/KidneyRegular.csv';
+import brainData from '../data/BrainRegular.csv';
 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -223,6 +224,7 @@ export default function TreeOfLife() {
     }
 
     const visualizeCurvedTree = (structuredData, colorMap) => {
+        // https://medium.com/analytics-vidhya/creating-a-radial-tree-using-d3-js-for-javascript-be943e23b74e
         let root = d3.stratify()
                 .id(function(row){return row.childId;})
                 .parentId(function(row){return row.parentId;})
@@ -266,7 +268,7 @@ export default function TreeOfLife() {
         let graphGroup = svg.append('g')
             .attr("fill", "none")
             .attr("stroke", "#22252c")
-            .attr("stroke-opacity", 0.6)
+            .attr("stroke-opacity", 0.75)
             .attr('transform', "translate("+(width/2)+","+(height/2)+")");
     
         graphGroup.selectAll(".link")
@@ -302,9 +304,22 @@ export default function TreeOfLife() {
             .on("mouseout", mouseovered(false));
     }
 
-    const handleClick = async() => {
+    const handleKidney = async() => {
         let dataArray = []
-        await d3.csv(data, function(row) {
+        await d3.csv(kidneyData, function(row) {
+            dataArray.push(row);
+        });
+        let colorMap = getCategories(dataArray);
+        let coloredData = assignColorToRows(dataArray, colorMap);
+        let structuredData = createHierarchyFromData(coloredData);
+        visualizeCurvedTree(structuredData, colorMap);
+        legend(colorMap);
+        return dataArray;
+    }
+
+    const handleBrain = async() => {
+        let dataArray = []
+        await d3.csv(brainData, function(row) {
             dataArray.push(row);
         });
         let colorMap = getCategories(dataArray);
@@ -321,7 +336,7 @@ export default function TreeOfLife() {
         <div>
             <h1>Welcome to the tree of life explorer.</h1>
             <h4>Upload a regular CSV file with a flat hierarchy.</h4>
-            <h4>To upload a csv in CNS v1.1 format, please run preprocessing.py before uploading it.</h4>
+            <h4>To upload a csv in CNS v1.1 format, please run <a href='https://github.com/mlzealot/tree-of-life/blob/main/preprocessor.py' target="_blank">preprocessing.py</a> before uploading it.</h4>
             <Container>
                 <br/>
                 <Row>
@@ -334,8 +349,12 @@ export default function TreeOfLife() {
                         </>
                         <br/>
                     </Col>
-                    <Col><p>OR</p><Button onClick={handleClick}>
+                    <Col><p>OR</p><Button onClick={handleKidney}>
                         Visualize Kidney Data
+                        </Button>
+                    </Col>
+                    <Col><p>OR</p><Button onClick={handleBrain}>
+                        Visualize Brain Data
                         </Button>
                     </Col>
                 </Row>
