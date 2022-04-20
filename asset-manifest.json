@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/tree-of-life/static/css/main.073c9b0a.css",
-    "main.js": "/tree-of-life/static/js/main.c0e08c50.js",
+    "main.css": "/tree-of-life/static/css/main.0b4e74b4.css",
+    "main.js": "/tree-of-life/static/js/main.916e171e.js",
     "static/js/787.918e77cf.chunk.js": "/tree-of-life/static/js/787.918e77cf.chunk.js",
     "static/media/KidneyRegular.csv": "/tree-of-life/static/media/KidneyRegular.2877fd806f8f7faf51a8.csv",
     "static/media/logo.svg": "/tree-of-life/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/tree-of-life/index.html",
-    "main.073c9b0a.css.map": "/tree-of-life/static/css/main.073c9b0a.css.map",
-    "main.c0e08c50.js.map": "/tree-of-life/static/js/main.c0e08c50.js.map",
+    "main.0b4e74b4.css.map": "/tree-of-life/static/css/main.0b4e74b4.css.map",
+    "main.916e171e.js.map": "/tree-of-life/static/js/main.916e171e.js.map",
     "787.918e77cf.chunk.js.map": "/tree-of-life/static/js/787.918e77cf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.c0e08c50.js"
+    "static/css/main.0b4e74b4.css",
+    "static/js/main.916e171e.js"
   ]
 }
