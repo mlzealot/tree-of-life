@@ -2,6 +2,12 @@ import React from 'react';
 import * as d3 from 'd3';
 import data from '../data/KidneyRegular.csv';
 
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 function linkStep(startAngle, startRadius, endAngle, endRadius) {
     const c0 = Math.cos(startAngle = (startAngle - 90) / 180 * Math.PI);
     const s0 = Math.sin(startAngle);
@@ -223,8 +229,8 @@ export default function TreeOfLife() {
                 (structuredData);
         
         console.log(root);
-        let height = 1200;
-        let width = 1200;
+        let height = 1000;
+        let width = 1000;
     
         let svg = d3.select('#treeOfCurves')
             .append('svg')
@@ -316,14 +322,30 @@ export default function TreeOfLife() {
             <h1>Welcome to the tree of life explorer.</h1>
             <h4>Upload a regular CSV file with a flat hierarchy.</h4>
             <h4>To upload a csv in CNS v1.1 format, please run preprocessing.py before uploading it.</h4>
-            <input type="file" multiple={false} onChange={handleFileUpload}/>
-            <button onClick={handleClick}>
-                Visualize Kidney Data
-            </button>
-            <div id="treeOfLife"></div>
-            <div id="treeOfCurves">
-            </div>
-            <div id="legend"></div>
+            <Container>
+                <br/>
+                <Row>
+                    <Col>
+                        <>
+                        <Form.Group onChange={handleFileUpload} controlId="formFile" className="mb-1">
+                            <Form.Label>Upload a file to get started</Form.Label>
+                            <Form.Control type="file" />
+                        </Form.Group>
+                        </>
+                        <br/>
+                    </Col>
+                    <Col><p>OR</p><Button onClick={handleClick}>
+                        Visualize Kidney Data
+                        </Button>
+                    </Col>
+                </Row>
+                <br/>
+                <Row>
+                    <Col><div id="treeOfCurves"></div></Col>
+                    <Col><div id="legend"></div></Col>
+                </Row>
+            </Container>
+            {/* <div id="treeOfLife"></div> */}
         </div>
     );
 }
