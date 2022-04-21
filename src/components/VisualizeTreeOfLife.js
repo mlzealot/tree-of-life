@@ -199,7 +199,6 @@ export default function TreeOfLife() {
         let color = d3.scaleOrdinal()
             .domain(keys)
             .range(colorValues);
-        console.log(color);
 
         legendSvg.selectAll("legendDots")
             .data(keys)
