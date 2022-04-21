@@ -61,7 +61,7 @@ Node packages: d3, react-bootstrap, gh-pages
 
 ## Known issues
 
-+ The page stacks the graphs once multiple files are plotted, instead of refreshing the layout with new graph. This is a possible issue with the React and the D3 DOMs being different.
++ The page stacks the graphs once multiple files are plotted, instead of refreshing the layout with new graph. This is a possible issue with the React and the D3 DOMs rendering in different methodologies.
 + For now, the solution is to refresh the page for every new visualization.
 
 ## Results

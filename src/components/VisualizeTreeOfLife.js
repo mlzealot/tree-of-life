@@ -336,7 +336,7 @@ export default function TreeOfLife() {
             <h1>Welcome to the tree of life explorer.</h1>
             <h4>Upload a regular CSV file with a flat hierarchy.</h4>
             <h4>To upload a CSV in ASCTB v1.1 format, please run <a href='https://github.com/mlzealot/tree-of-life/blob/main/preprocessor.py' target="_blank">preprocessing.py</a> before uploading it.</h4>
-            <h4>For more details, please read the <a href="https://github.com/mlzealot/tree-of-life">Project GitHub page</a></h4>
+            <h4>For more details, please read the <a href="https://github.com/mlzealot/tree-of-life">Project GitHub page.</a></h4>
             <Container>
                 <br/>
                 <Row>
