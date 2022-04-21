@@ -59,6 +59,11 @@ Node packages: d3, react-bootstrap, gh-pages
 + Use d3.stratify() method to convert the hierarchical data structure into a d3 - readable structure.
 + Visualize the data in a radial tree. Reference: https://medium.com/analytics-vidhya/creating-a-radial-tree-using-d3-js-for-javascript-be943e23b74e
 
+## Known issues
+
++ The page stacks the graphs once multiple files are plotted, instead of refreshing the layout with new graph. This is a possible issue with the React and the D3 DOMs being different.
++ For now, the solution is to refresh the page for every new visualization.
+
 ## Results
 
 On Kidney data:
