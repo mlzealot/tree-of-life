@@ -57,4 +57,4 @@ On Kidney data:
 
 On Brain data:
 
-![Brain](./images/Brain.png)
+![Brain](./images/brain.png)
