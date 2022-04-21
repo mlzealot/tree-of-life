@@ -17,7 +17,7 @@ You may also see any lint errors in the console.
 Installs the necessary packages for the application. The packages can be viewed in node_modules folder.
 
 ### `preprocessing.py`
-Takes the CNS v1.1 csv as input to create a regular csv.
+Takes the CSV in ASCTB v1.1 format as input to create a regular csv.
 
 **Usage**
 ```{bash}
@@ -53,7 +53,8 @@ Libraries used: React, D3
 Node packages: d3, react-bootstrap, gh-pages
 
 + Read the flat format csv file (preprocessed).
-+ Color each row based on a unique value from "AS/2/LABEL". I chose that column since coloring it with lower levels in the hierarchy would cause too many categories, which may confuse the user in my opinion.
++ Create a random color generator based on material design guidelines.
++ Assign a random color to each row based on a unique value from "AS/2/LABEL". I chose that column since coloring it with lower levels in the hierarchy would cause too many categories, which may confuse the user in my opinion.
 + Create a hierarchy based on the flat data by assigning child and parent IDs.
 + Use d3.stratify() method to convert the hierarchical data structure into a d3 - readable structure.
 + Visualize the data in a radial tree. Reference: https://medium.com/analytics-vidhya/creating-a-radial-tree-using-d3-js-for-javascript-be943e23b74e
