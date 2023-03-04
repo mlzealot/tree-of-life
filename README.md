@@ -1,5 +1,7 @@
 # Tree of Life - Human Anatomy
 
+## The site is live at: [Tree of Life](https://mlzealot.github.io/tree-of-life/)
+
 ## Available Scripts
 
 In the project directory, you can run:
